@@ -53,6 +53,10 @@
             <i data-feather="credit-card"></i>
             <span>Fees</span>
           </button>
+          <button class="nav-item" data-page="grievance">
+            <i data-feather="alert-circle"></i>
+            <span>Grievance</span>
+          </button>
           <button class="nav-item" data-page="alumni">
             <i data-feather="users"></i>
             <span>Alumni Portal</span>
@@ -176,25 +180,34 @@
                 <div class="quick-access">
                   <div class="quick-access__label">Quick Access</div>
                   <div class="quick-access__grid">
-                    <button class="quick-pill">
+                    <button
+                      class="quick-pill link-btn"
+                      data-link="academics"
+                    >
                       <span class="quick-pill__icon">
                         <i data-feather="book-open"></i>
                       </span>
                       LMS
                     </button>
-                    <button class="quick-pill">
+                    <button
+                      class="quick-pill link-btn"
+                      data-link="attendance"
+                    >
                       <span class="quick-pill__icon">
                         <i data-feather="calendar"></i>
                       </span>
                       Attendance
                     </button>
-                    <button class="quick-pill">
+                    <button class="quick-pill link-btn" data-link="fees">
                       <span class="quick-pill__icon">
                         <i data-feather="credit-card"></i>
                       </span>
                       Payments
                     </button>
-                    <button class="quick-pill">
+                    <button
+                      class="quick-pill link-btn"
+                      data-link="performance"
+                    >
                       <span class="quick-pill__icon">
                         <i data-feather="trending-up"></i>
                       </span>
@@ -214,28 +227,50 @@
                 <p class="muted">Total Outstanding Amount</p>
                 <div class="big-number" data-count="0">₹ 0</div>
 
-                <button class="btn btn--primary">Make Payment</button>
+                <button class="btn btn--primary link-btn" data-link="fees">
+                  Make Payment
+                </button>
 
                 <div class="fees-grid">
                   <div class="mini-card">
                     <div class="mini-card__label">Academic Fees</div>
                     <div class="mini-card__amount">₹ 0</div>
-                    <button class="mini-card__btn">Pay</button>
+                    <button
+                      class="mini-card__btn link-btn"
+                      data-link="fees"
+                    >
+                      Pay
+                    </button>
                   </div>
                   <div class="mini-card">
                     <div class="mini-card__label">Hostel Fees</div>
                     <div class="mini-card__amount">₹ 0</div>
-                    <button class="mini-card__btn">Pay</button>
+                    <button
+                      class="mini-card__btn link-btn"
+                      data-link="fees"
+                    >
+                      Pay
+                    </button>
                   </div>
                   <div class="mini-card">
                     <div class="mini-card__label">Transport Fees</div>
                     <div class="mini-card__amount">₹ 0</div>
-                    <button class="mini-card__btn">Pay</button>
+                    <button
+                      class="mini-card__btn link-btn"
+                      data-link="fees"
+                    >
+                      Pay
+                    </button>
                   </div>
                   <div class="mini-card">
                     <div class="mini-card__label">Miscellaneous</div>
                     <div class="mini-card__amount">₹ 0</div>
-                    <button class="mini-card__btn">Pay</button>
+                    <button
+                      class="mini-card__btn link-btn"
+                      data-link="fees"
+                    >
+                      Pay
+                    </button>
                   </div>
                 </div>
               </section>
@@ -248,12 +283,36 @@
                   <h3>Services</h3>
                 </div>
                 <div class="service-grid">
-                  <button class="service-card">Admit Card</button>
-                  <button class="service-card">Alumni Portal</button>
-                  <button class="service-card">Attendance</button>
-                  <button class="service-card">Convocation Form</button>
-                  <button class="service-card">Courses</button>
-                  <button class="service-card">Fee Undertaking</button>
+                  <button
+                    class="service-card link-btn"
+                    data-link="admit-card"
+                  >
+                    Admit Card
+                  </button>
+                  <button class="service-card link-btn" data-link="alumni">
+                    Alumni Portal
+                  </button>
+                  <button
+                    class="service-card link-btn"
+                    data-link="attendance"
+                  >
+                    Attendance
+                  </button>
+                  <button
+                    class="service-card link-btn"
+                    data-link="convocation"
+                  >
+                    Convocation Form
+                  </button>
+                  <button class="service-card link-btn" data-link="courses">
+                    Courses
+                  </button>
+                  <button
+                    class="service-card link-btn"
+                    data-link="fee-undertaking"
+                  >
+                    Fee Undertaking
+                  </button>
                 </div>
               </section>
 
@@ -262,10 +321,30 @@
                   <h3>Communication</h3>
                 </div>
                 <div class="service-grid">
-                  <button class="service-card">Circulars</button>
-                  <button class="service-card">College Info</button>
-                  <button class="service-card">Central Communication</button>
-                  <button class="service-card">Helpdesk</button>
+                  <button
+                    class="service-card link-btn"
+                    data-link="circulars"
+                  >
+                    Circulars
+                  </button>
+                  <button
+                    class="service-card link-btn"
+                    data-link="college-info"
+                  >
+                    College Info
+                  </button>
+                  <button
+                    class="service-card link-btn"
+                    data-link="central-communication"
+                  >
+                    Central Communication
+                  </button>
+                  <button
+                    class="service-card link-btn"
+                    data-link="helpdesk"
+                  >
+                    Helpdesk
+                  </button>
                 </div>
               </section>
             </div>
@@ -344,6 +423,140 @@
                       <td>2300353N2III0169</td>
                       <td>₹ 0</td>
                       <td><span class="badge badge--soft">Paid</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </section>
+
+          <!-- GRIEVANCE & COMPLAINTS PAGE -->
+          <section
+            id="page-grievance"
+            class="page"
+            data-page-title="Grievance &amp; Complaints"
+          >
+            <h2 class="page-title">Grievance &amp; Complaints</h2>
+
+            <!-- Student banner -->
+            <section class="card profile-banner">
+              <div class="profile-banner__user">
+                <img
+                  src="https://i.pravatar.cc/80?img=15"
+                  alt="Student"
+                  class="profile-banner__avatar"
+                />
+                <div class="profile-banner__info">
+                  <div class="profile-banner__name">Alex Carter</div>
+                  <div class="profile-banner__meta">BCA · 5th Semester</div>
+                </div>
+              </div>
+              <div class="profile-banner__meta-block">
+                <div>Admission No: <strong>2300353N2III0169</strong></div>
+                <div>Roll No: <strong>78010T2300353N150</strong></div>
+              </div>
+            </section>
+
+            <!-- Submit complaint -->
+            <section class="card card--gradient grievance-submit">
+              <div class="grievance-submit__left">
+                <p class="muted">Submit a New Complaint</p>
+                <button class="btn btn--primary grievance-submit__btn">
+                  File Complaint
+                </button>
+                <p class="grievance-submit__note">
+                  Choose a category on the right and describe your issue in the
+                  complaint form.
+                </p>
+              </div>
+              <div class="grievance-submit__right">
+                <div class="category-grid">
+                  <button class="category-card">
+                    <span class="category-card__icon category-card__icon--academic">
+                      <i data-feather="book-open"></i>
+                    </span>
+                    <span class="category-card__title">Academic</span>
+                  </button>
+                  <button class="category-card">
+                    <span
+                      class="category-card__icon category-card__icon--infra"
+                    >
+                      <i data-feather="building"></i>
+                    </span>
+                    <span class="category-card__title">Infrastructure</span>
+                  </button>
+                  <button class="category-card">
+                    <span
+                      class="category-card__icon category-card__icon--hostel"
+                    >
+                      <i data-feather="home"></i>
+                    </span>
+                    <span class="category-card__title">Hostel</span>
+                  </button>
+                  <button class="category-card">
+                    <span
+                      class="category-card__icon category-card__icon--other"
+                    >
+                      <i data-feather="more-horizontal"></i>
+                    </span>
+                    <span class="category-card__title">Other</span>
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <!-- Complaint History -->
+            <section class="card">
+              <div class="card__header">
+                <h3>Complaint History</h3>
+              </div>
+              <div class="table-wrapper">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Complaint ID</th>
+                      <th>Date</th>
+                      <th>Category</th>
+                      <th>Subject</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="table-row-anim">
+                      <td>CMP-2024-001</td>
+                      <td>15-03-2024</td>
+                      <td>Infrastructure</td>
+                      <td>Broken fan in Class 302</td>
+                      <td>
+                        <span
+                          class="status-pill status-pill--pending"
+                          >Pending</span
+                        >
+                      </td>
+                    </tr>
+                    <tr class="table-row-anim">
+                      <td>CMP-2024-002</td>
+                      <td>10-03-2024</td>
+                      <td>Academic</td>
+                      <td>Issue with LMS access</td>
+                      <td>
+                        <span
+                          class="status-pill status-pill--resolved"
+                          >Resolved</span
+                        >
+                      </td>
+                    </tr>
+                    <tr class="table-row-anim">
+                      <td>CMP-2024-003</td>
+                      <td>07-03-2024</td>
+                      <td>Academic</td>
+                      <td>Issue with internal assessment</td>
+                      <td>
+                        <span
+                          class="status-pill status-pill--resolved"
+                          >Resolved</span
+                        >
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -559,7 +772,256 @@
             </div>
           </section>
 
-          <!-- PLACEHOLDER PAGES -->
+          <!-- ADDITIONAL SERVICE/COMMUNICATION PAGES -->
+          <section
+            id="page-admit-card"
+            class="page"
+            data-page-title="Admit Card"
+          >
+            <h2 class="page-title">Admit Card</h2>
+            <section class="card">
+              <div class="card__header">
+                <h3>Current Examination Session</h3>
+              </div>
+              <p class="muted">
+                Download your admit card for the upcoming semester examinations.
+              </p>
+              <ul class="muted" style="font-size: 12px; margin-top: 8px">
+                <li>Session: Jan–Jun 2024</li>
+                <li>Exam Centre: Main Campus</li>
+              </ul>
+              <button class="btn btn--primary" style="margin-top: 14px">
+                Download Admit Card (PDF)
+              </button>
+            </section>
+          </section>
+
+          <section
+            id="page-convocation"
+            class="page"
+            data-page-title="Convocation Form"
+          >
+            <h2 class="page-title">Convocation Form</h2>
+            <section class="card">
+              <div class="card__header">
+                <h3>Apply for Convocation</h3>
+              </div>
+              <p class="muted">
+                Submit your convocation application and confirm your
+                participation.
+              </p>
+              <button class="btn btn--primary" style="margin-top: 14px">
+                Fill Convocation Form
+              </button>
+            </section>
+          </section>
+
+          <section id="page-courses" class="page" data-page-title="Courses">
+            <h2 class="page-title">Courses</h2>
+            <section class="card">
+              <div class="card__header">
+                <h3>Enrolled Courses</h3>
+              </div>
+              <div class="service-grid service-grid--lms">
+                <div class="service-card large">
+                  <strong>Data Structures</strong>
+                  <span class="service-card__sub">
+                    Internal: 28/30 · External: 60/70
+                  </span>
+                </div>
+                <div class="service-card large">
+                  <strong>Computer Networks</strong>
+                  <span class="service-card__sub">
+                    Internal: 25/30 · External: 55/70
+                  </span>
+                </div>
+                <div class="service-card large">
+                  <strong>Web Development</strong>
+                  <span class="service-card__sub">
+                    Internal: 29/30 · External: 65/70
+                  </span>
+                </div>
+              </div>
+            </section>
+          </section>
+
+          <section
+            id="page-fee-undertaking"
+            class="page"
+            data-page-title="Fee Undertaking"
+          >
+            <h2 class="page-title">Fee Undertaking</h2>
+            <section class="card">
+              <div class="card__header">
+                <h3>Undertaking Status</h3>
+              </div>
+              <p class="muted">
+                View and download your fee undertaking documents for the current
+                academic session.
+              </p>
+              <div class="table-wrapper" style="margin-top: 10px">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Session</th>
+                      <th>Type</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="table-row-anim">
+                      <td>2023–24</td>
+                      <td>Fee Undertaking</td>
+                      <td>
+                        <span
+                          class="status-pill status-pill--resolved"
+                          >Submitted</span
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </section>
+
+          <section
+            id="page-circulars"
+            class="page"
+            data-page-title="Circulars"
+          >
+            <h2 class="page-title">Circulars</h2>
+            <section class="card">
+              <div class="card__header">
+                <h3>Recent Circulars</h3>
+              </div>
+              <div class="table-wrapper">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Title</th>
+                      <th>Category</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="table-row-anim">
+                      <td>18-03-2024</td>
+                      <td>Mid‑Semester Examination Schedule</td>
+                      <td>Examination</td>
+                    </tr>
+                    <tr class="table-row-anim">
+                      <td>10-03-2024</td>
+                      <td>Library Timings Extension</td>
+                      <td>General</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </section>
+
+          <section
+            id="page-college-info"
+            class="page"
+            data-page-title="College Info"
+          >
+            <h2 class="page-title">College Info</h2>
+            <section class="card">
+              <div class="card__header">
+                <h3>Key Contacts</h3>
+              </div>
+              <div class="service-grid">
+                <div class="service-card">
+                  <strong>Administration Office</strong>
+                  <span class="service-card__sub">
+                    Phone: +91‑12345‑67890 · admin@nexus.edu
+                  </span>
+                </div>
+                <div class="service-card">
+                  <strong>Examination Cell</strong>
+                  <span class="service-card__sub">
+                    Phone: +91‑98765‑43210 · exams@nexus.edu
+                  </span>
+                </div>
+                <div class="service-card">
+                  <strong>Accounts Section</strong>
+                  <span class="service-card__sub">
+                    Phone: +91‑11223‑44556 · accounts@nexus.edu
+                  </span>
+                </div>
+                <div class="service-card">
+                  <strong>Hostel Office</strong>
+                  <span class="service-card__sub">
+                    Phone: +91‑99887‑77665 · hostel@nexus.edu
+                  </span>
+                </div>
+              </div>
+            </section>
+          </section>
+
+          <section
+            id="page-central-communication"
+            class="page"
+            data-page-title="Central Communication"
+          >
+            <h2 class="page-title">Central Communication</h2>
+            <section class="card">
+              <div class="card__header">
+                <h3>Messages</h3>
+              </div>
+              <div class="service-grid">
+                <div class="service-card">
+                  <strong>Dean Academics</strong>
+                  <span class="service-card__sub">
+                    Orientation for new semester will be held on 25‑03‑2024 at
+                    10:00 AM.
+                  </span>
+                </div>
+                <div class="service-card">
+                  <strong>Examination Cell</strong>
+                  <span class="service-card__sub">
+                    Hall tickets will be available for download from 20‑03‑2024.
+                  </span>
+                </div>
+              </div>
+            </section>
+          </section>
+
+          <section
+            id="page-helpdesk"
+            class="page"
+            data-page-title="Helpdesk"
+          >
+            <h2 class="page-title">Helpdesk</h2>
+            <section class="card">
+              <div class="card__header">
+                <h3>Support Channels</h3>
+              </div>
+              <div class="service-grid">
+                <div class="service-card">
+                  <strong>Student Support</strong>
+                  <span class="service-card__sub">
+                    Email: support@nexus.edu · Response within 24 hours.
+                  </span>
+                </div>
+                <div class="service-card">
+                  <strong>Technical Issues</strong>
+                  <span class="service-card__sub">
+                    Email: tech@nexus.edu · LMS / login problems.
+                  </span>
+                </div>
+                <div class="service-card">
+                  <strong>Emergency</strong>
+                  <span class="service-card__sub">
+                    Campus emergency helpline: +91‑00000‑00000.
+                  </span>
+                </div>
+              </div>
+            </section>
+          </section>
+
+          <!-- PERFORMANCE PLACEHOLDER -->
           <section
             id="page-performance"
             class="page"
@@ -573,19 +1035,263 @@
             </section>
           </section>
 
+          <!-- FEEDBACK PAGE -->
           <section
             id="page-feedback"
             class="page"
             data-page-title="Feedback"
           >
             <h2 class="page-title">Feedback</h2>
-            <section class="card">
-              <p class="muted">
-                Add college &amp; teacher feedback forms with star ratings.
-              </p>
+
+            <!-- Student banner -->
+            <section class="card profile-banner">
+              <div class="profile-banner__user">
+                <img
+                  src="https://i.pravatar.cc/80?img=15"
+                  alt="Student"
+                  class="profile-banner__avatar"
+                />
+                <div class="profile-banner__info">
+                  <div class="profile-banner__name">Alex Carter</div>
+                  <div class="profile-banner__meta">BCA · 5th Semester</div>
+                </div>
+              </div>
+              <div class="profile-banner__meta-block">
+                <div>Admission No: <strong>2300353N2III0169</strong></div>
+                <div>Roll No: <strong>78010T2300353N150</strong></div>
+              </div>
             </section>
+
+            <div class="grid-two">
+              <!-- College Feedback -->
+              <section class="card feedback-card">
+                <div class="card__header">
+                  <h3>College Feedback</h3>
+                </div>
+
+                <form
+                  id="college-feedback-form"
+                  class="feedback-form"
+                  autocomplete="off"
+                >
+                  <div class="feedback-field">
+                    <label class="field-label" for="college-category">
+                      Select Category
+                    </label>
+                    <select
+                      id="college-category"
+                      name="category"
+                      class="input-field"
+                      required
+                    >
+                      <option value="">Choose a category…</option>
+                      <option value="infrastructure">
+                        Infrastructure, Labs &amp; Library
+                      </option>
+                      <option value="canteen">Canteen &amp; Facilities</option>
+                      <option value="sanitation">
+                        Sanitation &amp; Cleanliness
+                      </option>
+                      <option value="administration">
+                        Administration &amp; Support
+                      </option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+
+                  <div class="feedback-field">
+                    <span class="field-label">Overall Rating</span>
+                    <div
+                      class="star-rating"
+                      data-input="college-rating"
+                      aria-label="Overall rating"
+                    >
+                      <button type="button" class="star" data-value="1">★</button>
+                      <button type="button" class="star" data-value="2">★</button>
+                      <button type="button" class="star" data-value="3">★</button>
+                      <button type="button" class="star" data-value="4">★</button>
+                      <button type="button" class="star" data-value="5">★</button>
+                    </div>
+                    <input
+                      type="hidden"
+                      id="college-rating"
+                      name="rating"
+                      required
+                    />
+                  </div>
+
+                  <div class="feedback-field">
+                    <label class="field-label" for="college-comments">
+                      Description / Comments
+                    </label>
+                    <textarea
+                      id="college-comments"
+                      name="comments"
+                      class="feedback-textarea"
+                      placeholder="Share your experience, suggestions, or issues…"
+                      required
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="btn btn--primary feedback-submit"
+                  >
+                    Submit Feedback
+                  </button>
+                </form>
+              </section>
+
+              <!-- Teacher Feedback -->
+              <section class="card feedback-card">
+                <div class="card__header">
+                  <h3>Teacher Feedback</h3>
+                </div>
+
+                <form
+                  id="teacher-feedback-form"
+                  class="feedback-form"
+                  autocomplete="off"
+                >
+                  <div class="feedback-field">
+                    <label class="field-label" for="teacher-select">
+                      Select Teacher / Subject
+                    </label>
+                    <select
+                      id="teacher-select"
+                      name="teacher"
+                      class="input-field"
+                      required
+                    >
+                      <option value="">Choose teacher or subject…</option>
+                      <option value="ds-sharma">
+                        Data Structures (Mr. Sharma)
+                      </option>
+                      <option value="cn-verma">
+                        Computer Networks (Ms. Verma)
+                      </option>
+                      <option value="wd-khan">
+                        Web Development (Mr. Khan)
+                      </option>
+                      <option value="db-gupta">
+                        Database Management (Ms. Gupta)
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="feedback-field">
+                    <span class="field-label">Teaching Quality</span>
+                    <div
+                      class="star-rating"
+                      data-input="teach-quality"
+                      aria-label="Teaching quality rating"
+                    >
+                      <button type="button" class="star" data-value="1">★</button>
+                      <button type="button" class="star" data-value="2">★</button>
+                      <button type="button" class="star" data-value="3">★</button>
+                      <button type="button" class="star" data-value="4">★</button>
+                      <button type="button" class="star" data-value="5">★</button>
+                    </div>
+                    <input
+                      type="hidden"
+                      id="teach-quality"
+                      name="teachQuality"
+                      required
+                    />
+                  </div>
+
+                  <div class="feedback-field">
+                    <span class="field-label">Punctuality</span>
+                    <div
+                      class="star-rating"
+                      data-input="teach-punctuality"
+                      aria-label="Punctuality rating"
+                    >
+                      <button type="button" class="star" data-value="1">★</button>
+                      <button type="button" class="star" data-value="2">★</button>
+                      <button type="button" class="star" data-value="3">★</button>
+                      <button type="button" class="star" data-value="4">★</button>
+                      <button type="button" class="star" data-value="5">★</button>
+                    </div>
+                    <input
+                      type="hidden"
+                      id="teach-punctuality"
+                      name="punctuality"
+                      required
+                    />
+                  </div>
+
+                  <div class="feedback-field">
+                    <span class="field-label">Subject Knowledge</span>
+                    <div
+                      class="star-rating"
+                      data-input="teach-knowledge"
+                      aria-label="Subject knowledge rating"
+                    >
+                      <button type="button" class="star" data-value="1">★</button>
+                      <button type="button" class="star" data-value="2">★</button>
+                      <button type="button" class="star" data-value="3">★</button>
+                      <button type="button" class="star" data-value="4">★</button>
+                      <button type="button" class="star" data-value="5">★</button>
+                    </div>
+                    <input
+                      type="hidden"
+                      id="teach-knowledge"
+                      name="knowledge"
+                      required
+                    />
+                  </div>
+
+                  <div class="feedback-field">
+                    <span class="field-label">Doubt Clearing</span>
+                    <div
+                      class="star-rating"
+                      data-input="teach-doubts"
+                      aria-label="Doubt clearing rating"
+                    >
+                      <button type="button" class="star" data-value="1">★</button>
+                      <button type="button" class="star" data-value="2">★</button>
+                      <button type="button" class="star" data-value="3">★</button>
+                      <button type="button" class="star" data-value="4">★</button>
+                      <button type="button" class="star" data-value="5">★</button>
+                    </div>
+                    <input
+                      type="hidden"
+                      id="teach-doubts"
+                      name="doubts"
+                      required
+                    />
+                  </div>
+
+                  <div class="feedback-field">
+                    <label class="field-label" for="teacher-comments">
+                      Additional Comments
+                    </label>
+                    <textarea
+                      id="teacher-comments"
+                      name="comments"
+                      class="feedback-textarea"
+                      placeholder="Any specific suggestions or appreciation for the teacher…"
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="btn btn--primary feedback-submit"
+                  >
+                    Submit Feedback
+                  </button>
+                </form>
+              </section>
+            </div>
+
+            <!-- Toast / success message -->
+            <div id="feedback-toast" class="feedback-toast">
+              Thank you! Your feedback has been recorded.
+            </div>
           </section>
 
+          <!-- NOTIFICATIONS -->
           <section
             id="page-notifications"
             class="page"
@@ -599,6 +1305,7 @@
             </section>
           </section>
 
+          <!-- SETTINGS -->
           <section
             id="page-settings"
             class="page"
@@ -616,7 +1323,6 @@
     </div>
 
     <script>
-      // render Feather icons
       feather.replace();
     </script>
   </body>
