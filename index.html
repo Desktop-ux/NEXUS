@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Nexus ERP · Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Inter font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+
+    <!-- Icons (Feather via unpkg) -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- App logic -->
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar__logo">
+          <div class="logo-mark">N</div>
+          <div class="logo-text">
+            <div class="logo-title">Nexus</div>
+            <div class="logo-sub">Campus ERP</div>
+          </div>
+        </div>
+
+        <nav class="sidebar__nav">
+          <button class="nav-item active" data-page="dashboard">
+            <i data-feather="home"></i>
+            <span>Dashboard</span>
+          </button>
+          <button class="nav-item" data-page="academics">
+            <i data-feather="book-open"></i>
+            <span>Academics</span>
+          </button>
+          <button class="nav-item" data-page="attendance">
+            <i data-feather="grid"></i>
+            <span>Attendance</span>
+          </button>
+          <button class="nav-item" data-page="fees">
+            <i data-feather="credit-card"></i>
+            <span>Fees</span>
+          </button>
+          <button class="nav-item" data-page="alumni">
+            <i data-feather="users"></i>
+            <span>Alumni Portal</span>
+          </button>
+          <button class="nav-item" data-page="performance">
+            <i data-feather="bar-chart-2"></i>
+            <span>Performance</span>
+          </button>
+          <button class="nav-item" data-page="feedback">
+            <i data-feather="message-square"></i>
+            <span>Feedback</span>
+          </button>
+          <button class="nav-item" data-page="notifications">
+            <i data-feather="bell"></i>
+            <span>Notifications</span>
+          </button>
+          <button class="nav-item" data-page="settings">
+            <i data-feather="settings"></i>
+            <span>Settings</span>
+          </button>
+        </nav>
+
+        <div class="sidebar__profile">
+          <img
+            src="https://i.pravatar.cc/80?img=15"
+            alt="User"
+            class="profile-avatar"
+          />
+          <div class="profile-text">
+            <div class="profile-name">Alex Carter</div>
+            <div class="profile-meta">BCA · 5th Semester</div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN PANEL -->
+      <div class="main">
+        <!-- TOPBAR -->
+        <header class="topbar">
+          <div class="topbar__title">
+            <h1>Nexus ERP</h1>
+          </div>
+
+          <div class="topbar__search">
+            <span class="icon">
+              <i data-feather="search"></i>
+            </span>
+            <input
+              type="text"
+              placeholder="Search modules, students, payments…"
+            />
+          </div>
+
+          <div class="topbar__actions">
+            <button class="icon-btn">
+              <i data-feather="bell"></i>
+              <span class="ping"></span>
+            </button>
+
+            <button class="user-pill">
+              <img
+                src="https://i.pravatar.cc/64?img=52"
+                alt="User avatar"
+                class="user-pill__avatar"
+              />
+              <div class="user-pill__text">
+                <div class="user-pill__name">Alex Carter</div>
+                <div class="user-pill__meta">Student · ID 23001234</div>
+              </div>
+              <i data-feather="chevron-down"></i>
+            </button>
+          </div>
+        </header>
+
+        <!-- CONTENT AREA -->
+        <main class="content">
+          <!-- DASHBOARD PAGE -->
+          <section
+            id="page-dashboard"
+            class="page active"
+            data-page-title="Dashboard"
+          >
+            <h2 class="page-title">Dashboard</h2>
+
+            <div class="grid-two">
+              <!-- Academics Card -->
+              <section class="card card--glass">
+                <div class="card__header">
+                  <h3>Academics</h3>
+                  <span class="badge badge--outline">5th Semester</span>
+                </div>
+
+                <div class="card__grid">
+                  <div class="metric">
+                    <div class="metric__top">
+                      <span class="metric__label">Attendance</span>
+                      <span class="metric__value">85% overall</span>
+                    </div>
+                    <div
+                      class="progress"
+                      data-progress="85"
+                    >
+                      <div class="progress__fill"></div>
+                    </div>
+                    <p class="metric__note">
+                      You’re on track. Minimum required: 75%.
+                    </p>
+                  </div>
+
+                  <div class="metric">
+                    <div class="metric__top">
+                      <span class="metric__label">LMS Progress</span>
+                      <span class="metric__value">32 / 40 tasks</span>
+                    </div>
+                    <div
+                      class="progress"
+                      data-progress="80"
+                    >
+                      <div class="progress__fill progress__fill--alt"></div>
+                    </div>
+                    <p class="metric__note">
+                      Complete this week’s assignments to stay ahead.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="quick-access">
+                  <div class="quick-access__label">Quick Access</div>
+                  <div class="quick-access__grid">
+                    <button class="quick-pill">
+                      <span class="quick-pill__icon">
+                        <i data-feather="book-open"></i>
+                      </span>
+                      LMS
+                    </button>
+                    <button class="quick-pill">
+                      <span class="quick-pill__icon">
+                        <i data-feather="calendar"></i>
+                      </span>
+                      Attendance
+                    </button>
+                    <button class="quick-pill">
+                      <span class="quick-pill__icon">
+                        <i data-feather="credit-card"></i>
+                      </span>
+                      Payments
+                    </button>
+                    <button class="quick-pill">
+                      <span class="quick-pill__icon">
+                        <i data-feather="trending-up"></i>
+                      </span>
+                      Performance
+                    </button>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Finance Card -->
+              <section class="card card--gradient">
+                <div class="card__header">
+                  <h3>Finance</h3>
+                  <span class="badge">Pay Now</span>
+                </div>
+
+                <p class="muted">Total Outstanding Amount</p>
+                <div class="big-number" data-count="0">₹ 0</div>
+
+                <button class="btn btn--primary">Make Payment</button>
+
+                <div class="fees-grid">
+                  <div class="mini-card">
+                    <div class="mini-card__label">Academic Fees</div>
+                    <div class="mini-card__amount">₹ 0</div>
+                    <button class="mini-card__btn">Pay</button>
+                  </div>
+                  <div class="mini-card">
+                    <div class="mini-card__label">Hostel Fees</div>
+                    <div class="mini-card__amount">₹ 0</div>
+                    <button class="mini-card__btn">Pay</button>
+                  </div>
+                  <div class="mini-card">
+                    <div class="mini-card__label">Transport Fees</div>
+                    <div class="mini-card__amount">₹ 0</div>
+                    <button class="mini-card__btn">Pay</button>
+                  </div>
+                  <div class="mini-card">
+                    <div class="mini-card__label">Miscellaneous</div>
+                    <div class="mini-card__amount">₹ 0</div>
+                    <button class="mini-card__btn">Pay</button>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <!-- Services & Communication -->
+            <div class="grid-two">
+              <section class="card">
+                <div class="card__header">
+                  <h3>Services</h3>
+                </div>
+                <div class="service-grid">
+                  <button class="service-card">Admit Card</button>
+                  <button class="service-card">Alumni Portal</button>
+                  <button class="service-card">Attendance</button>
+                  <button class="service-card">Convocation Form</button>
+                  <button class="service-card">Courses</button>
+                  <button class="service-card">Fee Undertaking</button>
+                </div>
+              </section>
+
+              <section class="card">
+                <div class="card__header">
+                  <h3>Communication</h3>
+                </div>
+                <div class="service-grid">
+                  <button class="service-card">Circulars</button>
+                  <button class="service-card">College Info</button>
+                  <button class="service-card">Central Communication</button>
+                  <button class="service-card">Helpdesk</button>
+                </div>
+              </section>
+            </div>
+          </section>
+
+          <!-- FEES PAGE -->
+          <section id="page-fees" class="page" data-page-title="Fees & Payments">
+            <h2 class="page-title">Fees &amp; Payments</h2>
+
+            <section class="card card--gradient">
+              <div class="fees-summary">
+                <div>
+                  <p class="muted">Total Outstanding Amount</p>
+                  <div class="big-number" data-count="0">₹ 0</div>
+                </div>
+                <button class="btn btn--primary">Pay Now</button>
+              </div>
+            </section>
+
+            <div class="fees-grid fees-grid--equal">
+              <section class="card">
+                <div class="mini-card__label">Academic Fees</div>
+                <div class="mini-card__amount">₹ 0</div>
+                <button class="mini-card__btn">Pay</button>
+              </section>
+              <section class="card">
+                <div class="mini-card__label">Hostel Fees</div>
+                <div class="mini-card__amount">₹ 0</div>
+                <button class="mini-card__btn">Pay</button>
+              </section>
+              <section class="card">
+                <div class="mini-card__label">Transport Fees</div>
+                <div class="mini-card__amount">₹ 0</div>
+                <button class="mini-card__btn">Pay</button>
+              </section>
+              <section class="card">
+                <div class="mini-card__label">Miscellaneous</div>
+                <div class="mini-card__amount">₹ 0</div>
+                <button class="mini-card__btn">Pay</button>
+              </section>
+            </div>
+
+            <section class="card">
+              <div class="card__header">
+                <h3>Fee History &amp; Breakdown</h3>
+              </div>
+              <div class="table-wrapper">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Session</th>
+                      <th>Fee Type</th>
+                      <th>Head Name</th>
+                      <th>Amount</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="table-row-anim">
+                      <td>07-01-2024</td>
+                      <td>Academic Fees</td>
+                      <td>2300353N2III0169</td>
+                      <td>₹ 0</td>
+                      <td><span class="badge badge--soft">Paid</span></td>
+                    </tr>
+                    <tr class="table-row-anim">
+                      <td>07-01-2024</td>
+                      <td>Transport Fees</td>
+                      <td>2300353N2III0169</td>
+                      <td>₹ 0</td>
+                      <td><span class="badge badge--soft">Paid</span></td>
+                    </tr>
+                    <tr class="table-row-anim">
+                      <td>07-01-2024</td>
+                      <td>Miscellaneous</td>
+                      <td>2300353N2III0169</td>
+                      <td>₹ 0</td>
+                      <td><span class="badge badge--soft">Paid</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </section>
+
+          <!-- ATTENDANCE PAGE -->
+          <section
+            id="page-attendance"
+            class="page"
+            data-page-title="Attendance"
+          >
+            <h2 class="page-title">Attendance</h2>
+
+            <section class="card">
+              <div class="attendance-header">
+                <div>
+                  <h3 class="attendance-title">
+                    Overall Attendance:
+                    <span class="strong">85%</span>
+                  </h3>
+                  <p class="muted">
+                    Total Classes: 195 · Classes Attended: 166
+                  </p>
+                </div>
+                <div class="pill-group">
+                  <span class="badge badge--outline">Day Wise</span>
+                  <span class="badge badge--outline">Course Wise</span>
+                  <span class="badge">Overall</span>
+                </div>
+              </div>
+
+              <div class="table-wrapper">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Subject Name</th>
+                      <th>Total Classes</th>
+                      <th>Attended</th>
+                      <th>Percentage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="table-row-anim">
+                      <td>Data Structures</td>
+                      <td>40</td>
+                      <td>35</td>
+                      <td>
+                        <div class="percent-cell" data-percent="87.5">
+                          <span class="percent-cell__value">87.5%</span>
+                          <div class="percent-bar">
+                            <div class="percent-bar__fill"></div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="table-row-anim">
+                      <td>Computer Networks</td>
+                      <td>38</td>
+                      <td>30</td>
+                      <td>
+                        <div class="percent-cell" data-percent="78.9">
+                          <span class="percent-cell__value">78.9%</span>
+                          <div class="percent-bar">
+                            <div class="percent-bar__fill"></div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="table-row-anim">
+                      <td>Web Development</td>
+                      <td>42</td>
+                      <td>38</td>
+                      <td>
+                        <div class="percent-cell" data-percent="90.5">
+                          <span class="percent-cell__value">90.5%</span>
+                          <div class="percent-bar">
+                            <div class="percent-bar__fill"></div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="table-row-anim">
+                      <td>Database Management</td>
+                      <td>35</td>
+                      <td>28</td>
+                      <td>
+                        <div class="percent-cell" data-percent="80">
+                          <span class="percent-cell__value">80.0%</span>
+                          <div class="percent-bar">
+                            <div class="percent-bar__fill"></div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="table-row-anim">
+                      <td>Operating Systems</td>
+                      <td>40</td>
+                      <td>32</td>
+                      <td>
+                        <div class="percent-cell" data-percent="80">
+                          <span class="percent-cell__value">80.0%</span>
+                          <div class="percent-bar">
+                            <div class="percent-bar__fill"></div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </section>
+
+          <!-- ACADEMICS (LMS) PAGE -->
+          <section id="page-academics" class="page" data-page-title="LMS">
+            <h2 class="page-title">LMS</h2>
+            <section class="card">
+              <div class="breadcrumb">Home &rsaquo; LMS</div>
+              <div class="service-grid service-grid--lms">
+                <button class="service-card large">My Courses</button>
+                <button class="service-card large">Assignments</button>
+                <button class="service-card large">Calendar</button>
+                <button class="service-card large">Timetable</button>
+                <button class="service-card large">Attendance</button>
+              </div>
+            </section>
+          </section>
+
+          <!-- ALUMNI PAGE -->
+          <section
+            id="page-alumni"
+            class="page"
+            data-page-title="Alumni Portal"
+          >
+            <h2 class="page-title">Alumni Portal</h2>
+
+            <div class="grid-two">
+              <section class="card">
+                <div class="card__header">
+                  <h3>Featured Alumni</h3>
+                  <div class="pill-group">
+                    <button class="tiny-pill">Batch</button>
+                    <button class="tiny-pill">Location</button>
+                  </div>
+                </div>
+                <div class="alumni-grid">
+                  <article class="alumni-card">
+                    <img
+                      src="https://i.pravatar.cc/90?img=35"
+                      alt="Alumni"
+                      class="alumni-avatar"
+                    />
+                    <div class="alumni-name">Ayaan Khan</div>
+                    <div class="alumni-role">
+                      Director · FinTech Corp
+                    </div>
+                    <button class="btn btn--outline">Connect</button>
+                  </article>
+                  <article class="alumni-card">
+                    <img
+                      src="https://i.pravatar.cc/90?img=47"
+                      alt="Alumni"
+                      class="alumni-avatar"
+                    />
+                    <div class="alumni-name">Janan Sharma</div>
+                    <div class="alumni-role">
+                      Senior Engineer · CloudBase
+                    </div>
+                    <button class="btn btn--outline">Connect</button>
+                  </article>
+                  <article class="alumni-card">
+                    <img
+                      src="https://i.pravatar.cc/90?img=21"
+                      alt="Alumni"
+                      class="alumni-avatar"
+                    />
+                    <div class="alumni-name">Meera Verma</div>
+                    <div class="alumni-role">
+                      Product Manager · Nova Labs
+                    </div>
+                    <button class="btn btn--outline">Connect</button>
+                  </article>
+                </div>
+              </section>
+
+              <section class="card">
+                <div class="card__header">
+                  <h3>Networking &amp; Mentorship</h3>
+                </div>
+                <div class="service-grid">
+                  <button class="service-card">
+                    <strong>Find a Mentor</strong>
+                    <span class="service-card__sub">
+                      Get guidance from industry experts.
+                    </span>
+                  </button>
+                  <button class="service-card">
+                    <strong>Job Opportunities</strong>
+                    <span class="service-card__sub">
+                      Explore alumni‑referred openings.
+                    </span>
+                  </button>
+                  <button class="service-card">
+                    <strong>Discussion Forums</strong>
+                    <span class="service-card__sub">
+                      Join topic‑based communities.
+                    </span>
+                  </button>
+                  <button class="service-card">
+                    <strong>Events</strong>
+                    <span class="service-card__sub">
+                      Reunions, webinars &amp; meetups.
+                    </span>
+                  </button>
+                </div>
+              </section>
+            </div>
+          </section>
+
+          <!-- PLACEHOLDER PAGES -->
+          <section
+            id="page-performance"
+            class="page"
+            data-page-title="Performance"
+          >
+            <h2 class="page-title">Performance</h2>
+            <section class="card">
+              <p class="muted">
+                Build the detailed CGPA / SGPA performance module here.
+              </p>
+            </section>
+          </section>
+
+          <section
+            id="page-feedback"
+            class="page"
+            data-page-title="Feedback"
+          >
+            <h2 class="page-title">Feedback</h2>
+            <section class="card">
+              <p class="muted">
+                Add college &amp; teacher feedback forms with star ratings.
+              </p>
+            </section>
+          </section>
+
+          <section
+            id="page-notifications"
+            class="page"
+            data-page-title="Notifications"
+          >
+            <h2 class="page-title">Notifications</h2>
+            <section class="card">
+              <p class="muted">
+                Central place for announcements, circulars, and alerts.
+              </p>
+            </section>
+          </section>
+
+          <section
+            id="page-settings"
+            class="page"
+            data-page-title="Settings"
+          >
+            <h2 class="page-title">Settings</h2>
+            <section class="card">
+              <p class="muted">
+                Profile, security, and preference settings go here.
+              </p>
+            </section>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      // render feather icons
+      feather.replace();
+    </script>
+  </body>
+</html>
