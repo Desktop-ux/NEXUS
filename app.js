@@ -1,4 +1,4 @@
-// Vanilla SPA + GSAP page animations
+// Simple SPA navigation + GSAP animations
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const targetId = `page-${pageKey}`;
       if (targetId === currentPageId) return;
 
-      // set active nav
+      // update active nav
       navItems.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
 
@@ -25,10 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function switchPage(oldId, newId) {
     const oldPage = document.getElementById(oldId);
     const newPage = document.getElementById(newId);
-
     if (!newPage) return;
 
-    // hide old
     if (oldPage) {
       gsap.to(oldPage, {
         duration: 0.35,
@@ -37,8 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power2.inOut",
         onComplete: () => {
           oldPage.classList.remove("active");
-
-          // show new
           newPage.classList.add("active");
           animatePage(newId);
         },
@@ -51,12 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function animatePage(pageId) {
     const page = document.getElementById(pageId);
+    if (!page) return;
+
     page.style.opacity = 0;
 
-    // base entrance
-    const tl = gsap.timeline({
-      defaults: { ease: "power3.out" },
-    });
+    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
     tl.fromTo(
       page,
@@ -64,24 +59,27 @@ document.addEventListener("DOMContentLoaded", () => {
       { opacity: 1, y: 0, duration: 0.45 }
     );
 
-    tl.from(
-      page.querySelector(".page-title"),
-      { y: 18, opacity: 0, duration: 0.4 },
-      "-=0.25"
-    );
+    const title = page.querySelector(".page-title");
+    if (title) {
+      tl.from(
+        title,
+        { y: 18, opacity: 0, duration: 0.4 },
+        "-=0.25"
+      );
+    }
 
-    tl.from(
-      page.querySelectorAll(".card"),
-      { y: 30, opacity: 0, duration: 0.5, stagger: 0.08 },
-      "-=0.15"
-    );
+    const cards = page.querySelectorAll(".card");
+    if (cards.length) {
+      tl.from(
+        cards,
+        { y: 30, opacity: 0, duration: 0.5, stagger: 0.08 },
+        "-=0.15"
+      );
+    }
 
-    // animate progress bars inside the page
     animateProgress(page);
     animateCounters(page);
     animatePercentBars(page);
-
-    // Scroll-based animations (for tables)
     setupRowScrollAnimations(page);
   }
 
@@ -115,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     scope.querySelectorAll(".big-number[data-count]").forEach((el) => {
       const raw = parseFloat(el.dataset.count || "0");
       const isCurrency = el.textContent.trim().startsWith("₹");
+
       gsap.fromTo(
         { val: 0 },
         {
@@ -122,8 +121,11 @@ document.addEventListener("DOMContentLoaded", () => {
           duration: 1.1,
           ease: "power2.out",
           onUpdate: function () {
-            const value = Math.round(this.targets()[0].val);
-            el.textContent = isCurrency ? `₹ ${value.toLocaleString()}` : value;
+            const obj = this.targets()[0];
+            const value = Math.round(obj.val);
+            el.textContent = isCurrency
+              ? `₹ ${value.toLocaleString()}`
+              : value.toLocaleString();
           },
         }
       );
@@ -146,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // initial page load
+  // initial page
   const initial = document.getElementById(currentPageId);
   if (initial) {
     initial.classList.add("active");

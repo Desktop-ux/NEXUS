@@ -11,21 +11,22 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     />
 
-    <!-- Icons (Feather via unpkg) -->
+    <!-- Feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>
 
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css" />
 
     <!-- GSAP + ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-    <!-- App logic -->
+    <!-- App JS -->
     <script src="app.js" defer></script>
   </head>
   <body>
     <div class="app">
-      <!-- SIDEBAR -->
+      <!-- SIDEBAR / NAV -->
       <aside class="sidebar">
         <div class="sidebar__logo">
           <div class="logo-mark">N</div>
@@ -87,7 +88,7 @@
         </div>
       </aside>
 
-      <!-- MAIN PANEL -->
+      <!-- MAIN COLUMN -->
       <div class="main">
         <!-- TOPBAR -->
         <header class="topbar">
@@ -126,7 +127,7 @@
           </div>
         </header>
 
-        <!-- CONTENT AREA -->
+        <!-- PAGE CONTENT -->
         <main class="content">
           <!-- DASHBOARD PAGE -->
           <section
@@ -150,10 +151,7 @@
                       <span class="metric__label">Attendance</span>
                       <span class="metric__value">85% overall</span>
                     </div>
-                    <div
-                      class="progress"
-                      data-progress="85"
-                    >
+                    <div class="progress" data-progress="85">
                       <div class="progress__fill"></div>
                     </div>
                     <p class="metric__note">
@@ -166,10 +164,7 @@
                       <span class="metric__label">LMS Progress</span>
                       <span class="metric__value">32 / 40 tasks</span>
                     </div>
-                    <div
-                      class="progress"
-                      data-progress="80"
-                    >
+                    <div class="progress" data-progress="80">
                       <div class="progress__fill progress__fill--alt"></div>
                     </div>
                     <p class="metric__note">
@@ -504,9 +499,7 @@
                       class="alumni-avatar"
                     />
                     <div class="alumni-name">Ayaan Khan</div>
-                    <div class="alumni-role">
-                      Director · FinTech Corp
-                    </div>
+                    <div class="alumni-role">Director · FinTech Corp</div>
                     <button class="btn btn--outline">Connect</button>
                   </article>
                   <article class="alumni-card">
@@ -516,9 +509,7 @@
                       class="alumni-avatar"
                     />
                     <div class="alumni-name">Janan Sharma</div>
-                    <div class="alumni-role">
-                      Senior Engineer · CloudBase
-                    </div>
+                    <div class="alumni-role">Senior Engineer · CloudBase</div>
                     <button class="btn btn--outline">Connect</button>
                   </article>
                   <article class="alumni-card">
@@ -528,9 +519,7 @@
                       class="alumni-avatar"
                     />
                     <div class="alumni-name">Meera Verma</div>
-                    <div class="alumni-role">
-                      Product Manager · Nova Labs
-                    </div>
+                    <div class="alumni-role">Product Manager · Nova Labs</div>
                     <button class="btn btn--outline">Connect</button>
                   </article>
                 </div>
@@ -627,7 +616,7 @@
     </div>
 
     <script>
-      // render feather icons
+      // render Feather icons
       feather.replace();
     </script>
   </body>
